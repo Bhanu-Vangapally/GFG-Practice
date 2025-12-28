@@ -1,11 +1,14 @@
 class Solution {
     public boolean isPalindrome(int n) {
         // code here
-        int rev=0,original=n;
-        while(n>0){
-            rev=rev*10+n%10;
-            n/=10;
+        String s="";
+        s+=n;
+        int i=0,j=s.length()-1;
+        while(i<j){
+            if(s.charAt(i)!=s.charAt(j)) return false;
+            i++;
+            j--;
         }
-        return rev==original;
+        return true;
     }
 }
